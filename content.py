@@ -152,6 +152,16 @@ def studio_body():
       hostage to make that happen.</p></div>
       <div></div>
     </div>
+    <div class="service-row">
+      <div class="mono">04 / Critique</div>
+      <div><h3 style="font-size:var(--step-1);">Unfinished work goes in front of the team every week</h3>
+      <p style="color:var(--ink-soft);">A standing weekly session, not a status meeting — designers
+      bring rough thinking, not polished decks, and get feedback grounded in what was actually
+      observed or tested, not opinion. It's also where resourcing gets said out loud: if something
+      needs research there isn't time for, that trade-off is raised and written down here, not
+      absorbed quietly by whoever's under the deadline.</p></div>
+      <div></div>
+    </div>
   </div>
 </section>
 
@@ -261,8 +271,8 @@ CASES = [
          summary="A custom operations platform for scheduling, maintenance, and client billing across a 140-vessel global charter fleet.",
          gradient="grape", icon="anchor"),
     dict(slug="raa-insurance", client="RAA Group · Motor Insurance", tag="Product design · UX research · Design sprint",
-         title="Finding the real conversion blocker — and redirecting a product roadmap before six months of build",
-         summary="A structured design sprint synthesised five years of research across the motor insurance quote and purchase experience, revealing that member identity matching — not payment options — was preventing completion. The finding redirected the roadmap before a single sprint of development had been committed to the wrong solution.",
+         title="Catching a fabricated revenue figure before it reached a leadership pitch",
+         summary="A routine check of an AI-generated shortlist of 'quick win' opportunities uncovered a headline revenue estimate that had never appeared in any real document — confidently attributed, entirely invented. Tracing it back led to the real blocker: not payment options, but a member identity-matching failure preventing existing members from completing a quote. The roadmap was redirected before a single sprint of the wrong build began.",
          gradient="sunset", icon="route"),
     dict(slug="raa-travel", client="RAA Group · Travel", tag="Product design · Information architecture · Search UX",
          title="Redesigning a travel booking platform for members at every stage of the journey",
@@ -394,12 +404,12 @@ CASE_DETAIL = {
         quote_by="Callum Reyes, Global Operations Director, Hull Maritime",
     ),
     "raa-insurance": dict(
-        problem="The product team had a strong hypothesis: conversion was dropping because the payment options at checkout were insufficient. A redesign of the payment step was scoped and ready to build. Before committing, the team ran a five-day design sprint to pressure-test the assumption.",
-        approach="The sprint synthesised five years of prior research — usability studies, NPS verbatims, analytics drop-off data, and contact centre call logs — into a single structured picture of where members were actually abandoning the journey and why. The real blocker emerged within the first two days: members who already held RAA membership were hitting an identity matching failure that prevented them from completing a quote as a member rather than a new customer. Payment options were not the problem at all. A prototype testing the identity-first flow was built and tested with real members by day four. Results were unambiguous. The roadmap was rewritten before the sprint closed.",
-        stats_html="""<div class="stat"><span class="num">0</span><span class="label">development spend committed to the wrong roadmap</span></div>
+        problem="A shortlist of 'quick win' opportunities had been drafted with AI assistance ahead of a product planning session, each item carrying a proposed fix and a rough value estimate. One figure stood out: a specific, confidently-stated revenue number attached to a member-recognition fix, credited to a named product manager. Before it reached a funding conversation, every item on the list was checked against its original source.",
+        approach="The check found the number had never existed in any real document — a plausible-sounding estimate generated from adjacent statistics and presented with an attribution and confidence it hadn't earned. That discovery changed the scope of the review: instead of a spot-check, the underlying research was re-synthesised from source — raw usability findings, analytics drop-off data, and years of prior testing — rather than trusted from the AI-generated summary of it. The real blocker emerged from that re-read. Members who already held a membership were hitting an identity-matching failure that prevented them from completing a quote as a member rather than a new customer. Payment options, the original hypothesis, were not the problem at all. A prototype testing the identity-first flow was built and tested with real members within days, and the roadmap was rewritten before any development time was spent on the wrong fix.",
+        stats_html="""<div class="stat"><span class="num">Caught</span><span class="label">a fabricated revenue figure traced back to zero real sources</span></div>
         <div class="stat"><span class="num">Live</span><span class="label">authenticated quote-to-buy flow shipped for motor insurance</span></div>
         <div class="stat"><span class="num">QoQ</span><span class="label">completion rates improving quarter on quarter since launch</span></div>""",
-        quote="Five years of research sitting in separate documents, synthesised in a week. The sprint didn't tell us what to build — it told us what not to build, which turned out to be more valuable.",
+        quote="The AI didn't just get the size of the opportunity wrong — it invented the opportunity, gave it a source, and gave that source a name. If nobody had checked, that number would have been the headline of a funding pitch.",
         quote_by="Product Manager, RAA Motor Insurance",
     ),
     "raa-travel": dict(
@@ -509,6 +519,10 @@ def process_body():
 
 # --------------------------------------------------------------- JOURNAL ---
 POSTS = [
+    dict(slug="the-trade-off-nobody-wrote-down", date="10 Sep 2026", tag="Studio",
+         title="The trade-off nobody wrote down",
+         summary="Discovery gets skipped under deadline pressure more often than anyone admits. The fix isn't a rule that blocks it — it's a habit that makes the trade-off visible, in writing, every time.",
+         gradient="grape", icon="chat"),
     dict(slug="onboarding-is-architecture", date="14 Aug 2026", tag="Product",
          title="Onboarding is an architecture problem, not a UI problem",
          summary="Why most onboarding redesigns fail: they polish the form instead of redrawing the decision tree underneath it.",
@@ -550,6 +564,39 @@ def journal_body():
 
 
 POST_BODIES = {
+    "the-trade-off-nobody-wrote-down": """
+<p>Discovery is the research and validation work that happens before
+something gets designed — the step that checks a proposed solution
+actually addresses the real problem, rather than the assumed one. It is
+also the easiest thing in any studio to skip under deadline pressure,
+because skipping it rarely causes a visible problem on the day. It
+usually causes one three months later, by which point nobody remembers
+that the shortcut was ever taken, let alone who decided to take it.</p>
+<p>We used to lose that decision the same way most teams do: quietly. A
+designer would agree to move straight to delivery because the timeline
+demanded it, the trade-off would live in their head for a while, and then
+it would evaporate. If the shortcut turned out fine, nobody thought about
+it again. If it didn't, there was no record that the risk had ever been
+named — the consequences landed on whoever executed the shortcut, not on
+whoever set the timeline that forced it.</p>
+<p>The fix we landed on isn't a rule that blocks work from proceeding —
+rules like that get worked around the first time they're inconvenient.
+It's a standing weekly session where unfinished work gets put in front of
+the whole team, and three questions get asked out loud, every time,
+before anything moves forward: does this actually need the team's
+attention, has discovery happened, and if it hasn't, who is deciding to
+skip it and why. That third answer gets written down — not to assign
+blame, but to build a record. A trade-off made once is a judgement call.
+The same trade-off made silently, every week, for six months, is a
+resourcing problem that nobody can prove exists without a written
+history of it happening.</p>
+<p>The clearest sign this became infrastructure rather than a habit tied
+to one person: when someone who ran the session left, it kept running
+without them, unchanged. Nothing about it depended on any single
+person's memory or presence. That's the test we'd suggest for any
+process like this — not whether it works while you're watching it, but
+whether it survives you leaving the room.</p>
+""",
     "onboarding-is-architecture": """
 <p>Most onboarding redesigns start with the form. Someone screenshots the
 current sign-up flow, marks it up in red, and a designer makes it look
