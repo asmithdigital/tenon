@@ -260,6 +260,30 @@ CASES = [
          title="Replacing forty spreadsheets with one fleet operations system",
          summary="A custom operations platform for scheduling, maintenance, and client billing across a 140-vessel global charter fleet.",
          gradient="grape", icon="anchor"),
+    dict(slug="raa-insurance", client="RAA Group · Motor Insurance", tag="Product design · UX research · Design sprint",
+         title="Finding the real conversion blocker — and redirecting a product roadmap before six months of build",
+         summary="A structured design sprint synthesised five years of research across the motor insurance quote and purchase experience, revealing that member identity matching — not payment options — was preventing completion. The finding redirected the roadmap before a single sprint of development had been committed to the wrong solution.",
+         gradient="sunset", icon="route"),
+    dict(slug="raa-travel", client="RAA Group · Travel", tag="Product design · Information architecture · Search UX",
+         title="Redesigning a travel booking platform for members at every stage of the journey",
+         summary="A multi-year UX engagement across the RAA Travel booking platform, from initial redesign through subsequent iterations — covering search and navigation, information architecture, multiple customer personas, and ongoing usability testing across both the customer-facing platform and the travel agent administration interface.",
+         gradient="peach", icon="orbit"),
+    dict(slug="raa-member-portal", client="RAA Group · Member Portal", tag="Product design · Self-service · Mobile",
+         title="Building a self-service member portal that members actually use to resolve issues, not just view information",
+         summary="A sustained design engagement across RAA's My Account member portal, progressively adding genuine self-service capability — policy management, renewals, payments, claims, and identity management — with each feature designed to let members resolve their need without calling the contact centre.",
+         gradient="citrus", icon="chat"),
+    dict(slug="raa-design-system", client="RAA Group · Design System", tag="Design systems · Accessibility · Design Ops",
+         title="Building a design system from nothing — including accessibility as a first-class design constraint",
+         summary="A multi-year contribution to the RAA design system from its foundation, covering component governance, documentation, adoption across design and engineering, and an embedded accessibility standards partnership with Vision Australia that put WCAG compliance into the system at the component level rather than as a separate audit.",
+         gradient="sky", icon="anchor"),
+    dict(slug="pali-footwear", client="PALI Footwear", tag="Web design · Ecommerce · Brand",
+         title="An ecommerce presence for an independent footwear brand that needed to look like it belonged online",
+         summary="Website design and development for an independent footwear retailer, covering product presentation, ecommerce UX, and a visual identity that could compete with larger brands in search and on social.",
+         gradient="grape", icon="bolt"),
+    dict(slug="bass-coast-podiatry", client="Bass Coast Podiatry", tag="Web design · Health services",
+         title="A new website for a regional podiatry practice that needed to convert local search traffic into appointments",
+         summary="Website design and build for a regional Victorian podiatry practice, with a focus on local search discoverability, clear service presentation, and an online booking pathway that reduced the number of steps between finding the practice and making an appointment.",
+         gradient="citrus", icon="cross"),
 ]
 
 
@@ -368,6 +392,60 @@ CASE_DETAIL = {
         <div class="stat"><span class="num">4hrs</span><span class="label">saved per week, per fleet manager</span></div>""",
         quote="We didn't think a studio this size could build something this specific to us. They spent two weeks on our docks in three countries before writing a line of code.",
         quote_by="Callum Reyes, Global Operations Director, Hull Maritime",
+    ),
+    "raa-insurance": dict(
+        problem="The product team had a strong hypothesis: conversion was dropping because the payment options at checkout were insufficient. A redesign of the payment step was scoped and ready to build. Before committing, the team ran a five-day design sprint to pressure-test the assumption.",
+        approach="The sprint synthesised five years of prior research — usability studies, NPS verbatims, analytics drop-off data, and contact centre call logs — into a single structured picture of where members were actually abandoning the journey and why. The real blocker emerged within the first two days: members who already held RAA membership were hitting an identity matching failure that prevented them from completing a quote as a member rather than a new customer. Payment options were not the problem at all. A prototype testing the identity-first flow was built and tested with real members by day four. Results were unambiguous. The roadmap was rewritten before the sprint closed.",
+        stats_html="""<div class="stat"><span class="num">0</span><span class="label">development spend committed to the wrong roadmap</span></div>
+        <div class="stat"><span class="num">Live</span><span class="label">authenticated quote-to-buy flow shipped for motor insurance</span></div>
+        <div class="stat"><span class="num">QoQ</span><span class="label">completion rates improving quarter on quarter since launch</span></div>""",
+        quote="Five years of research sitting in separate documents, synthesised in a week. The sprint didn't tell us what to build — it told us what not to build, which turned out to be more valuable.",
+        quote_by="Product Manager, RAA Motor Insurance",
+    ),
+    "raa-travel": dict(
+        problem="The RAA Travel platform served customers at very different stages of the travel experience — someone searching for inspiration is in a completely different mindset from someone mid-booking or trying to resolve a post-trip issue. The existing platform design treated all of these customers the same way, with search and navigation built around an older information architecture that did not reflect how members actually thought about travel.",
+        approach="Discovery began with in-person member interviews conducted in RAA stores and service centres across South Australia, alongside workshops with travel operations teams, product managers, engineering leads, and external agency partners. Multiple customer personas were developed across inspiration, search, booking, and post-trip contexts. The search experience was redesigned based on keyword analysis and search behaviour data, working within the technical constraints of the booking platform. Information architecture was rebuilt in collaboration with an external IA agency and the internal content team. Usability testing ran in-house across multiple rounds of the redesigned experience. The travel agent administration interface was also redesigned in parallel, with separate discovery and testing for that internal user base.",
+        stats_html="""<div class="stat"><span class="num">4</span><span class="label">customer contexts mapped, from inspiration to post-trip</span></div>
+        <div class="stat"><span class="num">2</span><span class="label">platforms redesigned: public website and travel booking platform</span></div>
+        <div class="stat"><span class="num">In-store</span><span class="label">usability testing conducted across RAA stores in South Australia</span></div>""",
+        quote="We needed a design team that could work across our external customers and our internal travel consultants simultaneously, without losing sight of either. That's exactly what happened.",
+        quote_by="Travel Operations Lead, RAA Group",
+    ),
+    "raa-member-portal": dict(
+        problem="The existing member portal was informational rather than functional. Members could see their policy but not renew it. They could view their membership but not update it. Every transactional need ended in a phone call. The contact centre was carrying volume that a well-designed self-service experience should have absorbed.",
+        approach="Each feature was scoped, discovered, and tested individually rather than delivered as a single large release. User research with members established what they were trying to do and where existing digital journeys were failing them. Each capability was prototyped and tested with members before build, with multiple rounds of usability testing for higher-stakes interactions like payments and claims. The experience was extended to the RAA mobile app in parallel, with separate design work for the different interaction context and re-entry patterns of mobile users. Handoffs from self-service to the contact centre were designed explicitly, so the transition felt like a continuation rather than a failure.",
+        stats_html="""<div class="stat"><span class="num">5</span><span class="label">self-service feature areas shipped: policy, renewals, payments, claims, identity</span></div>
+        <div class="stat"><span class="num">Mobile</span><span class="label">self-service extended to the RAA app with mobile-specific flows</span></div>
+        <div class="stat"><span class="num">Seamless</span><span class="label">handoff designed between self-service and the contact centre</span></div>""",
+        quote="The goal was never to stop members from calling us. It was to make sure that when they called, they actually needed to.",
+        quote_by="Digital Experience Manager, RAA Group",
+    ),
+    "raa-design-system": dict(
+        problem="The RAA design system needed to be built, not inherited. Components, documentation, governance processes, and the relationship between the design system and engineering implementation were all established from scratch. Accessibility had historically been managed as a compliance review at the end of a project rather than a design constraint built in from the beginning.",
+        approach="Component documentation, token architecture, and design system governance processes were established alongside the initial build, with adoption tracked across design and engineering squads. The Vision Australia accessibility partnership was initiated and managed as a standing engagement — regular workshops, WCAG audits built into the design and delivery process, and usability testing with assistive technology users as a standard part of discovery. Accessibility standards were embedded into design system components at the component level, so every team using the system inherited accessible defaults rather than having to apply them case by case.",
+        stats_html="""<div class="stat"><span class="num">0→1</span><span class="label">design system built from foundation, with governance across design and engineering</span></div>
+        <div class="stat"><span class="num">Ongoing</span><span class="label">accessibility partnership established with Vision Australia</span></div>
+        <div class="stat"><span class="num">WCAG</span><span class="label">compliance embedded at the component level, not as a separate audit</span></div>""",
+        quote="Accessibility built into a component means every team who uses that component gets accessibility for free. That's a completely different outcome from an audit.",
+        quote_by="Senior UX Designer, RAA Group",
+    ),
+    "pali-footwear": dict(
+        problem="PALI Footwear had a wholesale and in-store presence but no ecommerce site that felt credible next to the larger brands shoppers were used to buying from. Product pages were an afterthought bolted onto a generic template, and checkout had no visual connection to the brand at all.",
+        approach="Design and development were handled end to end: a product-first template that gave every shoe its own detail page treatment, a simplified checkout, and a visual identity — colour, type, product photography direction — built to hold up on a phone screen and in a Google Shopping listing next to competitors many times the size.",
+        stats_html="""<div class="stat"><span class="num">1</span><span class="label">single designer/developer engagement, brand through build</span></div>
+        <div class="stat"><span class="num">Mobile-first</span><span class="label">templates built around how footwear actually gets shopped on a phone</span></div>
+        <div class="stat"><span class="num">Launched</span><span class="label">full ecommerce rebuild, design through development</span></div>""",
+        quote="We needed to look like we belonged online next to brands ten times our size. That's what we got.",
+        quote_by="Founder, PALI Footwear",
+    ),
+    "bass-coast-podiatry": dict(
+        problem="Bass Coast Podiatry had no real website — a single static page with a phone number, no service information, and nothing that would surface in a local search. Prospective patients had no way to tell what the practice treated or how to book before calling.",
+        approach="The rebuild started with what people actually search for locally — \"podiatrist near me\", specific conditions, opening hours — and structured the site's pages and content around those terms. Service pages were written in plain language, not clinical copy, and a booking pathway was added that took a visitor from search result to a confirmed appointment request in as few steps as possible.",
+        stats_html="""<div class="stat"><span class="num">Local SEO</span><span class="label">site structured around real local search terms, not guesswork</span></div>
+        <div class="stat"><span class="num">Fewer steps</span><span class="label">booking pathway shortened from phone-only to a direct online request</span></div>
+        <div class="stat"><span class="num">Full rebuild</span><span class="label">from a single static page to a full service-based site</span></div>""",
+        quote="Patients started mentioning they found us on Google before we'd even finished the launch checklist.",
+        quote_by="Practice Owner, Bass Coast Podiatry",
     ),
 }
 
